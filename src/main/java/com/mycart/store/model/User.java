@@ -1,12 +1,34 @@
 package com.mycart.store.model;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "USER")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "USER_ID")
     private Long user_id;
+    @Column(name = "USERNAME", nullable = false, unique = true)
     private String username;
+    @Column(name = "EMAIL", nullable = false, unique = true)
     private String email;
+    @Column(name = "PASSWORD", nullable = false, unique = false)
     private String password;
+    @Column(name = "ROLE", nullable = false, unique = false)
     private String role;
+    @Column(name = "PHONE_NUMBER", nullable = false, unique = false)
     private String phone_number;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ADDRESS_ID", referencedColumnName = "add_id")
     private Address address;
     public User() {
     }
