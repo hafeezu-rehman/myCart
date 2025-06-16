@@ -28,7 +28,7 @@ public class User {
     @Column(name = "PHONE_NUMBER", nullable = false, unique = false)
     private String phone_number;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ADDRESS_ID", referencedColumnName = "add_id")
+    @JoinColumn(name = "ADDRESS_ID", referencedColumnName = "ADD_ID")
     private Address address;
     public User() {
     }
