@@ -4,16 +4,16 @@ public class Order {
     private Long ord_id;
     private String status;
     private double total_amount;
-    private double user_id;
-    private double add_id;
+    private User user;
+    private Address address;
     public Order() {
     }
-    public Order(Long ord_id, String status, double total_amount, double user_id, double add_id) {
+    public Order(Long ord_id, String status, double total_amount, User user, Address address) {
         this.ord_id = ord_id;
         this.status = status;
         this.total_amount = total_amount;
-        this.user_id = user_id;
-        this.add_id = add_id;
+        this.user = user;
+        this.address = address;
     }
     public Long getOrd_id() {
         return ord_id;
@@ -33,17 +33,17 @@ public class Order {
     public void setTotal_amount(double total_amount) {
         this.total_amount = total_amount;
     }
-    public double getUser_id() {
-        return user_id;
+    public User getUser() {
+        return user;
     }
-    public void setUser_id(double user_id) {
-        this.user_id = user_id;
+    public void setUser(User user) {
+        this.user = user;
     }
-    public double getAdd_id() {
-        return add_id;
+    public Address getAddress() {
+        return address;
     }
-    public void setAdd_id(double add_id) {
-        this.add_id = add_id;
+    public void setAddress(Address address) {
+        this.address = address;
     }
     
 }
