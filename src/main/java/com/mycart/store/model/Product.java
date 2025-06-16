@@ -1,12 +1,33 @@
 package com.mycart.store.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "PRODUCT")
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "PROD_ID")
     private Long prod_id;
+    @Column(name = "NAME", nullable = false, unique = false)
     private String name;
+    @Column(name = "DESCRIPTION", nullable = true, unique = false)
     private String description;
+    @Column(name = "PRICE", nullable = false, unique = false)
     private double price;
+    @Column(name = "STOCK", nullable = false, unique = false)
     private int stock;
+    @Column(name = "IMAGE_URL", nullable = false, unique = false)
     private String image_url;
+    @OneToMany()
+    @JoinColumn(name = "CATEG_ID", referencedColumnName = "CATEG_ID")
     private Category category;
     public Product() {
     }
