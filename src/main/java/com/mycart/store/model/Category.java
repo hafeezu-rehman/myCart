@@ -1,8 +1,22 @@
 package com.mycart.store.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "CATEGORY")
 public class Category {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "CATEG_ID")
     private Long categ_id;
+    @Column(name = "NAME", nullable = false, unique = false)
     private String name;
+    @Column(name = "DESCRIPTION", nullable = false, unique = false)
     private String description;
     public Category() {
     }
