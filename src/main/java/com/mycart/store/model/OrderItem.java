@@ -1,5 +1,4 @@
 package com.mycart.store.model;
-import com.mycart.store.model.*;
 public class OrderItem {
     private Long ordItemId;
     private int quantity;
