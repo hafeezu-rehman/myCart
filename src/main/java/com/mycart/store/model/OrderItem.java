@@ -1,25 +1,25 @@
 package com.mycart.store.model;
-
+import com.mycart.store.model.*;
 public class OrderItem {
-    private Long ord_item_id;
+    private Long ordItemId;
     private int quantity;
     private double price;
-    private Long prod_id;
-    private Long ord_id;
+    private Product product;
+    private Order order;
     public OrderItem() {
     }
-    public OrderItem(Long ord_item_id, int quantity, double price, Long prod_id, Long ord_id) {
-        this.ord_item_id = ord_item_id;
+    public OrderItem(Long ordItemId, int quantity, double price, Product product, Order order) {
+        this.ordItemId = ordItemId;
         this.quantity = quantity;
         this.price = price;
-        this.prod_id = prod_id;
-        this.ord_id = ord_id;
+        this.product = product;
+        this.order = order;
     }
-    public Long getOrd_item_id() {
-        return ord_item_id;
+    public Long getOrdItemId() {
+        return ordItemId;
     }
-    public void setOrd_item_id(Long ord_item_id) {
-        this.ord_item_id = ord_item_id;
+    public void setOrdItemId(Long ordItemId) {
+        this.ordItemId = ordItemId;
     }
     public int getQuantity() {
         return quantity;
@@ -33,17 +33,17 @@ public class OrderItem {
     public void setPrice(double price) {
         this.price = price;
     }
-    public Long getProd_id() {
-        return prod_id;
+    public Product getProduct() {
+        return product;
     }
-    public void setProd_id(Long prod_id) {
-        this.prod_id = prod_id;
+    public void setProduct(Product product) {
+        this.product = product;
     }
-    public Long getOrd_id() {
-        return ord_id;
+    public Order getOrder() {
+        return order;
     }
-    public void setOrd_id(Long ord_id) {
-        this.ord_id = ord_id;
+    public void setOrder(Order order) {
+        this.order = order;
     }
-    
+
 }
