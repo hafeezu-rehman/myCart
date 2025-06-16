@@ -7,11 +7,11 @@ public class User {
     private String password;
     private String role;
     private String phone_number;
-    private String add_id;
+    private Long add_id;
     public User() {
     }
     public User(Long user_id, String username, String email, String password, String role, String phone_number,
-            String add_id) {
+            Long add_id) {
         this.user_id = user_id;
         this.username = username;
         this.email = email;
@@ -56,10 +56,10 @@ public class User {
     public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
     }
-    public String getAdd_id() {
+    public Long getAdd_id() {
         return add_id;
     }
-    public void setAdd_id(String add_id) {
+    public void setAdd_id(Long add_id) {
         this.add_id = add_id;
     }
     
