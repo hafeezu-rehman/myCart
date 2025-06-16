@@ -7,18 +7,18 @@ public class User {
     private String password;
     private String role;
     private String phone_number;
-    private Long add_id;
+    private Address address;
     public User() {
     }
     public User(Long user_id, String username, String email, String password, String role, String phone_number,
-            Long add_id) {
+            Address address) {
         this.user_id = user_id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.role = role;
         this.phone_number = phone_number;
-        this.add_id = add_id;
+        this.address = address;
     }
     public Long getUser_id() {
         return user_id;
@@ -56,11 +56,11 @@ public class User {
     public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
     }
-    public Long getAdd_id() {
-        return add_id;
+    public Address getAddress() {
+        return address;
     }
-    public void setAdd_id(Long add_id) {
-        this.add_id = add_id;
+    public void setAddress(Address address) {
+        this.address = address;
     }
     
 }
