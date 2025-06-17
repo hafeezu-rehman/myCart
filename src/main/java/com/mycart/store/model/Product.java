@@ -21,9 +21,9 @@ public class Product {
     @Column(name = "DESCRIPTION", nullable = true, unique = false)
     private String description;
     @Column(name = "PRICE", nullable = false, unique = false)
-    private double price;
+    private Double price;
     @Column(name = "STOCK", nullable = false, unique = false)
-    private int stock;
+    private Integer stock;
     @Column(name = "IMAGE_URL", nullable = false, unique = false)
     private String image_url;
     @OneToMany()
@@ -31,7 +31,7 @@ public class Product {
     private Category category;
     public Product() {
     }
-    public Product(Long prod_id, String name, String description, double price, int stock, String image_url,
+    public Product(Long prod_id, String name, String description, Double price, Integer stock, String image_url,
             Category category) {
         this.prod_id = prod_id;
         this.name = name;
@@ -59,16 +59,16 @@ public class Product {
     public void setDescription(String description) {
         this.description = description;
     }
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
-    public int getStock() {
+    public Integer getStock() {
         return stock;
     }
-    public void setStock(int stock) {
+    public void setStock(Integer stock) {
         this.stock = stock;
     }
     public String getImage_url() {
@@ -83,4 +83,5 @@ public class Product {
     public void setCategory(Category category) {
         this.category = category;
     }
+    
 }

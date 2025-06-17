@@ -17,9 +17,9 @@ public class OrderItem {
     @Column(name = "ORDITEMID")
     private Long ordItemId;
     @Column(name = "QUANTITY", nullable = false, unique = false)
-    private int quantity;
+    private Integer quantity;
     @Column(name = "PRICE", nullable = false, unique = false)
-    private double price;
+    private Double price;
     @ManyToOne()
     @JoinColumn(name = "PROD_ID", referencedColumnName = "PROD_ID")
     private Product product;
@@ -28,7 +28,7 @@ public class OrderItem {
     private Order order;
     public OrderItem() {
     }
-    public OrderItem(Long ordItemId, int quantity, double price, Product product, Order order) {
+    public OrderItem(Long ordItemId, Integer quantity, Double price, Product product, Order order) {
         this.ordItemId = ordItemId;
         this.quantity = quantity;
         this.price = price;
@@ -41,16 +41,16 @@ public class OrderItem {
     public void setOrdItemId(Long ordItemId) {
         this.ordItemId = ordItemId;
     }
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
     public Product getProduct() {
@@ -65,5 +65,5 @@ public class OrderItem {
     public void setOrder(Order order) {
         this.order = order;
     }
-
+    
 }
