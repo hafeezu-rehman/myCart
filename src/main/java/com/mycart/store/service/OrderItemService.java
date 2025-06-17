@@ -21,7 +21,7 @@ public class OrderItemService {
     }
     public List<OrderItem> findOrderItems(Long ordId){
         if(ordId !=null)
-            return orderItemRepository.findByOrder_ord_id(ordId);
+            return orderItemRepository.findByOrder_ordId(ordId);
         throw new IllegalArgumentException("Unable to find order items");
     }
     public void updateOrderItem(OrderItem updatedOrderItem){

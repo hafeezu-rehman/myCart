@@ -24,7 +24,7 @@ public class OrderService {
     }
     public void updateOrder(Order updatedOrder){
         if(updatedOrder.getStatus()!=null && updatedOrder.getTotal_amount()!=null){
-            orderRepository.findById(updatedOrder.getOrd_id())
+            orderRepository.findById(updatedOrder.getOrdId())
             .map(order->{
                 order.setStatus(updatedOrder.getStatus());
                 order.setTotal_amount(updatedOrder.getTotal_amount());
@@ -37,8 +37,8 @@ public class OrderService {
             throw new IllegalArgumentException("Unable to update order");
     }
     public void deleteOrder(Order order){
-        if(findOrder(order.getOrd_id())!=null)
-            orderRepository.deleteById(order.getOrd_id());
+        if(findOrder(order.getOrdId())!=null)
+            orderRepository.deleteById(order.getOrdId());
         else
             throw new IllegalArgumentException("Unable to update order");
 

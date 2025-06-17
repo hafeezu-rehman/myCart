@@ -6,9 +6,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
+import java.util.*;
 @Entity
 @Table(name = "PRODUCT")
 public class Product {
@@ -26,7 +27,7 @@ public class Product {
     private Integer stock;
     @Column(name = "IMAGE_URL", nullable = false, unique = false)
     private String image_url;
-    @OneToMany()
+    @ManyToOne
     @JoinColumn(name = "CATEG_ID", referencedColumnName = "CATEG_ID")
     private Category category;
     public Product() {
@@ -41,6 +42,7 @@ public class Product {
         this.image_url = image_url;
         this.category = category;
     }
+
     public Long getProd_id() {
         return prod_id;
     }
@@ -83,5 +85,4 @@ public class Product {
     public void setCategory(Category category) {
         this.category = category;
     }
-    
 }

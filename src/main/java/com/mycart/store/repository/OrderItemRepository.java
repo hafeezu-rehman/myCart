@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 import com.mycart.store.model.OrderItem;
 @Repository
 public interface OrderItemRepository extends JpaRepository<OrderItem,Long>{
-    public List<OrderItem> findByOrder_ord_id(Long ORD_ID);
+    public List<OrderItem> findByOrder_ordId(Long ORD_ID);
 }

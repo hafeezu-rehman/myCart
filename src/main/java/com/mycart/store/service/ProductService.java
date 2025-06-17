@@ -33,16 +33,16 @@ public class ProductService {
                 product.setImage_url(updatedProduct.getImage_url());
                 product.setPrice(updatedProduct.getPrice());
                 product.setStock(updatedProduct.getStock());
-                return product;
+                return productRepository.save(product);
             })
             .orElseThrow(()->new IllegalArgumentException("Unable to update product"));
         }
         else
             throw new IllegalArgumentException("Unable to update product");
     }
-    public void deleteProduct(Product product){
-        if (productRepository.findById(product.getProd_id()).get()!=null)
-            productRepository.deleteById(product.getProd_id());
+    public void deleteProduct(Long id){
+        if (productRepository.findById(id).get()!=null)
+            productRepository.deleteById(id);
         else
             throw new IllegalArgumentException("Unable to delete product");
     }

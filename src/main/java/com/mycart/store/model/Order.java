@@ -15,7 +15,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ORD_ID")
-    private Long ord_id;
+    private Long ordId;
     @Column(name = "Status", nullable = false, unique = false)
     private String status;
     @Column(name = "TOTAL_AMOUNT", nullable = false, unique = false)
@@ -25,17 +25,17 @@ public class Order {
     private User user;
     public Order() {
     }
-    public Order(Long ord_id, String status, Double total_amount, User user) {
-        this.ord_id = ord_id;
+    public Order(Long ordId, String status, Double total_amount, User user) {
+        this.ordId = ordId;
         this.status = status;
         this.total_amount = total_amount;
         this.user = user;
     }
-    public Long getOrd_id() {
-        return ord_id;
+    public Long getOrdId() {
+        return ordId;
     }
-    public void setOrd_id(Long ord_id) {
-        this.ord_id = ord_id;
+    public void setOrdId(Long ordId) {
+        this.ordId = ordId;
     }
     public String getStatus() {
         return status;
