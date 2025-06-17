@@ -2,7 +2,6 @@ package com.mycart.store.service;
 
 import java.util.List;
 
-import org.apache.taglibs.standard.lang.jstl.ExpressionString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.mycart.store.model.Product;
