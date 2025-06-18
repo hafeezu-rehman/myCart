@@ -15,7 +15,6 @@ public class UserService {
     public void createUser(User user){
         if(user.getUsername()!=null && user.getPassword() !=null && user.getEmail()!=null && user.getPhone_number()!=null)
             userRepository.save(user);
-        
         else
             throw new IllegalArgumentException("Unable to create user due to incomplete information");
     }
@@ -30,7 +29,7 @@ public class UserService {
                 user.setUsername(updatedUser.getUsername());
                 user.setRole(updatedUser.getRole());
                 user.setPhone_number(updatedUser.getPhone_number());
-                user.setPassword(user.getPassword());
+                user.setPassword(updatedUser.getPassword());
                 user.setEmail(updatedUser.getEmail());
                 user.setAddress(updatedUser.getAddress());
                 return userRepository.save(user);

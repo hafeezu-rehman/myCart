@@ -39,11 +39,12 @@ public class OrderController {
         this.productService = productService;
     }
 
-    @PostMapping("/add/{userId}")
+    @PostMapping("/add/{id}")
     public ResponseEntity<?> createOrder(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response){
         try {
             Map<Long, Integer> cartMap=cartController.viewCart(request).getBody();
             if(cartMap==null || cartMap.isEmpty()){
+                System.out.println("Cart Map: " + cartMap);
                 return ResponseEntity.badRequest().build();
             }
             User user=new User();
