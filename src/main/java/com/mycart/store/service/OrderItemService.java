@@ -33,7 +33,7 @@ public class OrderItemService {
                     orderItem.setPrice(updatedOrderItem.getPrice());
                     orderItem.setProduct(updatedOrderItem.getProduct());
                     orderItem.setQuantity(updatedOrderItem.getQuantity());
-                    return orderItem;
+                    return orderItemRepository.save(orderItem);
                 })
                 .orElseThrow(()->new IllegalArgumentException("Unable to update order items"));
         }

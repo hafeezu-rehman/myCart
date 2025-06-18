@@ -33,7 +33,7 @@ public class AddressService {
                 address.setCity(updatedAddress.getCity());
                 address.setProvince(updatedAddress.getProvince());
                 address.setCountry(updatedAddress.getCountry());
-                return address;
+                return addressRepository.save(address);
             })
             .orElseThrow(()->new IllegalArgumentException("Unable to update address"));
         }

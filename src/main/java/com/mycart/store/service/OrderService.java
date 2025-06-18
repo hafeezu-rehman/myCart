@@ -29,7 +29,7 @@ public class OrderService {
                 order.setStatus(updatedOrder.getStatus());
                 order.setTotal_amount(updatedOrder.getTotal_amount());
                 order.setUser(updatedOrder.getUser());
-                return order;
+                return orderRepository.save(order);
             })
             .orElseThrow(()->new IllegalArgumentException("Unable to update order"));
         }

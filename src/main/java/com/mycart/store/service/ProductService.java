@@ -23,6 +23,10 @@ public class ProductService {
     public List<Product> findProducts(){
         return productRepository.findAll();
     }
+    public Product findProduct(Long id){
+        return productRepository.findById(id)
+        .orElseThrow(()->new IllegalArgumentException("Product not found"));
+    }
     public void updateProduct(Product updatedProduct){
         if(updatedProduct.getName()!=null && updatedProduct.getPrice()!=null && updatedProduct.getCategory()!=null && updatedProduct.getStock()!=null && updatedProduct.getDescription()!=null && updatedProduct.getImage_url()!=null){
             productRepository.findById(updatedProduct.getProd_id())

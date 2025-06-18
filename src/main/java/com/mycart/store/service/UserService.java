@@ -33,16 +33,16 @@ public class UserService {
                 user.setPassword(user.getPassword());
                 user.setEmail(updatedUser.getEmail());
                 user.setAddress(updatedUser.getAddress());
-                return user;
+                return userRepository.save(user);
             })
             .orElseThrow(()->new IllegalArgumentException("Unable to update user due to incomplete information"));
         }
         else
             throw new IllegalArgumentException("Unable to update user due to incomplete information");
     }
-    public void deleteUser(User user){
-        if(findUser(user.getUser_id())!=null)
-                userRepository.deleteById(user.getUser_id());
+    public void deleteUser(Long id){
+        if(findUser(id)!=null)
+                userRepository.deleteById(id);
         else
             throw new IllegalArgumentException("Unable to delete the user due to incomplete information");
     }
