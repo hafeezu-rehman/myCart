@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -46,18 +45,15 @@ public class SecurityConfig {
     
     @Bean
     public UserDetailsService userDetailsService() {
-        return username -> {
-            com.mycart.store.model.User user = userService.findByUserName(username);
-            if (user == null) {
+        return username->{
+            com.mycart.store.model.User user=userService.findByUserName(username);
+            if(user==null){
                 throw new UsernameNotFoundException("User not found");
             }
-
-            // Build Spring Security user
-            return org.springframework.security.core.userdetails.User
-                    .withUsername(user.getUsername())
-                    .password(user.getPassword())
-                    .roles(user.getRole().replace("ROLE_", ""))
-                    .build();
+            return User.withUsername(user.getUsername())
+            .password(user.getPassword())
+            .roles(user.getRole())
+            .build();
         };
     }
 }

@@ -1,6 +1,7 @@
 package com.mycart.store.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.mycart.store.model.User;
@@ -8,13 +9,18 @@ import com.mycart.store.repository.UserRepository;
 @Service
 public class UserService {
     private UserRepository userRepository;
+    private PasswordEncoder passwordEncoder;
     @Autowired
-    public UserService(UserRepository userRepository){
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder){
         this.userRepository=userRepository;
+        this.passwordEncoder=passwordEncoder;
     }
     public void createUser(User user){
         if(user.getUsername()!=null && user.getPassword() !=null && user.getEmail()!=null && user.getPhone_number()!=null)
+        {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
             userRepository.save(user);
+        }
         else
             throw new IllegalArgumentException("Unable to create user due to incomplete information");
     }
