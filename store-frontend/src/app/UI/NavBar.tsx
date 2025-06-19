@@ -42,12 +42,6 @@ export const NavBar = () => {
         {/* Actions */}
         <div className="hidden md:flex items-center gap-4">
           <Link
-            href="/cart"
-            className="px-4 py-2 bg-blue-500 text-white rounded-full shadow hover:bg-blue-600 transition"
-          >
-            Cart
-          </Link>
-          <Link
             href="/login"
             className="px-4 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition"
           >
