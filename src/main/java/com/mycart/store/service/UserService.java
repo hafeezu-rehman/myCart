@@ -18,6 +18,9 @@ public class UserService {
         else
             throw new IllegalArgumentException("Unable to create user due to incomplete information");
     }
+    public User findByUserName(String username){
+        return userRepository.findByUsername(username);
+    }
     public User findUser(Long userId){
         return userRepository.findById(userId)
             .orElseThrow(() -> new IllegalArgumentException("User not found"));

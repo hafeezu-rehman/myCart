@@ -1,4 +1,4 @@
-package com.mycart.store.Controller;
+package com.mycart.store.controller;
 
 import java.net.URLDecoder;
 import java.net.URLEncoder;

@@ -1,4 +1,4 @@
-package com.mycart.store.Controller;
+package com.mycart.store.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
